@@ -139,4 +139,10 @@ const mapStateToProps = state => {
   }
 }
 
-export default withRouter(connect(mapStateToProps)(App))
+const mapDispatchToProps = state => {
+  return {
+    todos: state.todos
+  }
+}
+
+export default withRouter(connect(mapStateToProps, mapDispatchToProps)(App))
